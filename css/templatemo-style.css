@@ -5,6 +5,34 @@ Tinker CSS Template
 https://templatemo.com/tm-506-tinker
 
 */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  z-index: 9999;
+}
+.whatsapp-float.right { right: 20px; }
+.whatsapp-float.left { left: 20px; }
+.whatsapp-float .whatsapp-icon {
+  display: flex;
+  align-items: center;
+  background: #25d366;
+  padding: 10px 15px;
+  border-radius: 50px;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  text-decoration: none;
+}
+.whatsapp-float .whatsapp-icon img {
+  width: 28px;
+  height: 28px;
+  margin-right: 8px;
+}
+.whatsapp-float .whatsapp-label {
+  font-weight: bold;
+  color: #fff;
+}
 
 * {
     margin: 0;
