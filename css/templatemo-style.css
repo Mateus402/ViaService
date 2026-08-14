@@ -279,7 +279,7 @@ bootstrap.min.css
 #about {
 	padding: 150px 0px;
 	/* background-image: url(../img/about-bg.jpg); */
-	background-image: url(../img/servico.jpg);
+	background-image: url(../img/servico-menor.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
@@ -287,6 +287,9 @@ bootstrap.min.css
 
 #about .service-item {
 	text-align: center;
+	background-color: rgba(0, 0, 0, 0.296);
+	border-radius: 20px;
+	padding: 30px 15px;
 }
 
 #about .service-item .icon {
@@ -297,7 +300,7 @@ bootstrap.min.css
 	line-height: 104px;
 	border: 3px solid #fff;
 	border-radius: 50%;
-	background-color: #f7c552;
+	background-color: #4fb848;
 }
 
 #about .service-item h4 {
@@ -318,8 +321,8 @@ bootstrap.min.css
 #about .service-item p {
 	color: #fff;
 	margin-top: 30px;
-	font-size: 15px;
-	text-align: justify;
+	font-size: 17px;
+	text-align: center;
 }
 
 #about .service-item .primary-blue-button {
