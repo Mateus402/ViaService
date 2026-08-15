@@ -271,6 +271,16 @@ bootstrap.min.css
   	vertical-align: middle;
 }
 
+h3 {
+	font-size: 25px;
+	font-weight: 800;
+	color: #4fb848;
+	margin-bottom: 20px;
+	margin: 0px;
+	padding: 5px 0px 0px 315px;
+	text-align: left;
+}
+
 .baner-content .text-content {
 	text-align: center;
 }
@@ -721,13 +731,13 @@ footer {
 footer .logo em {
 	font-style: normal;
 	font-size: 28px;
-	color: #f7c552;
+	color: #09385b;
 }
 footer .logo-ft {
 	display: inline-block;
 	margin-top: 15px;
 	text-decoration: none;
-	color: #fff!important;
+	color: #4fb848!important;
 	font-size: 21px;
 	font-weight: 900;
 	text-transform: uppercase;
@@ -845,6 +855,10 @@ footer .connect-us ul li a:hover {
 
 @media (max-width: 991px){
 
+	h3 {
+		padding: 0px 0px 0px 100px;
+	}
+	
 	.baner-content .text-content p {
 		padding: 0px 15%;
 	}
@@ -947,6 +961,11 @@ footer .connect-us ul li a:hover {
 }
 
 @media (max-width: 768px){
+	
+	h3 {
+		padding: 0px 0px 0px 100px;
+	}
+
 	.baner-content .text-content p {
 		padding: 0px 10%;
 	}
@@ -983,6 +1002,9 @@ footer .connect-us ul li a:hover {
 
 @media (max-width: 385px){
 
+	h3 {
+		padding: 0px 0px 0px 100px;
+	}
 	footer .location ul li {
 		display: block;
 	}
