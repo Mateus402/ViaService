@@ -1,0 +1,246 @@
+<!doctype html>
+<html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Confira a galeria da Via Service e conheça alguns dos nossos serviços de limpeza comercial, residencial e em altura.">
+
+    <title>Galeria</title>
+    <link rel="stylesheet" href="css/style-galery.css">
+
+    <script src="js/galery.js" defer></script>
+
+</head>
+
+<body>
+    <h1>Galeria</h1>
+
+    <div class="grid">
+        <div class="card">
+            <img src="img/limpeza comercial.jpeg" alt="Limpeza comercial" data-title="Limpeza Comercial">
+            <div class="caption">
+                Limpeza Comercial
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="img/imagem2.jpeg" alt="Imagem 2" data-title="Imagem 2">
+            <div class="caption">
+                Imagem 2
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="img/imagem3.jpeg" alt="Imagem 3" data-title="Imagem 3">
+            <div class="caption">
+                Imagem 3
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="img/imagem4.jpeg" alt="Imagem 4" data-title="Imagem 4">
+            <div class="caption">
+                Imagem 4
+            </div>
+        </div>
+    </div>
+
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="closeLightbox">
+            &times;
+        </button>
+        <button class="lightbox-prev" id="prevImage">
+            &#10094;
+        </button>
+        <img class="lightbox-image" id="lightboxImage" src="" alt="">
+        <button class="lightbox-next" id="nextImage">
+            &#10095;
+        </button>
+        <div class="lightbox-counter" id="lightboxCounter">
+            1 / 1
+        </div>
+    </div>
+
+    <!-- <script>
+
+        const images = document.querySelectorAll(".card img");
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImage = document.getElementById("lightboxImage");
+        const closeLightbox = document.getElementById("closeLightbox");
+        const prevImage = document.getElementById("prevImage");
+        const nextImage = document.getElementById("nextImage");
+        const lightboxCounter = document.getElementById("lightboxCounter");
+        let currentIndex = 0;
+        function openLightbox(index) {
+
+            currentIndex = index;
+
+            updateLightbox();
+
+            lightbox.classList.add("active");
+
+            document.body.style.overflow = "hidden";
+        }
+
+
+        /*
+        =========================
+        ATUALIZAR IMAGEM
+        =========================
+        */
+
+        function updateLightbox() {
+
+            const image = images[currentIndex];
+
+            lightboxImage.src = image.src;
+
+            lightboxImage.alt = image.alt;
+
+            lightboxCounter.textContent =
+                `${currentIndex + 1} / ${images.length}`;
+        }
+
+
+        /*
+        =========================
+        PRÓXIMA IMAGEM
+        =========================
+        */
+
+        function showNext() {
+
+            currentIndex++;
+
+            if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+
+            updateLightbox();
+        }
+
+
+        /*
+        =========================
+        IMAGEM ANTERIOR
+        =========================
+        */
+
+        function showPrevious() {
+
+            currentIndex--;
+
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            }
+
+            updateLightbox();
+        }
+
+
+        /*
+        =========================
+        CLIQUE NAS IMAGENS
+        =========================
+        */
+
+        images.forEach((image, index) => {
+
+            image.addEventListener("click", () => {
+
+                openLightbox(index);
+
+            });
+
+        });
+
+
+        /*
+        =========================
+        BOTÕES
+        =========================
+        */
+
+        nextImage.addEventListener("click", showNext);
+
+        prevImage.addEventListener("click", showPrevious);
+
+
+        /*
+        =========================
+        FECHAR
+        =========================
+        */
+
+        closeLightbox.addEventListener("click", () => {
+
+            lightbox.classList.remove("active");
+
+            document.body.style.overflow = "";
+
+        });
+
+
+        /*
+        =========================
+        CLICAR FORA DA IMAGEM
+        =========================
+        */
+
+        lightbox.addEventListener("click", (event) => {
+
+            if (event.target === lightbox) {
+
+                lightbox.classList.remove("active");
+
+                document.body.style.overflow = "";
+
+            }
+
+        });
+
+
+        /*
+        =========================
+        TECLADO
+        =========================
+        */
+
+        document.addEventListener("keydown", (event) => {
+
+            if (!lightbox.classList.contains("active")) {
+                return;
+            }
+
+
+            if (event.key === "Escape") {
+
+                lightbox.classList.remove("active");
+
+                document.body.style.overflow = "";
+
+            }
+
+
+            if (event.key === "ArrowRight") {
+
+                showNext();
+
+            }
+
+
+            if (event.key === "ArrowLeft") {
+
+                showPrevious();
+
+            }
+
+        });
+
+    </script> -->
+
+</body>
+
+</html>

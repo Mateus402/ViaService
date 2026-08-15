@@ -34,6 +34,8 @@ https://templatemo.com/tm-506-tinker
   color: #fff;
 }
 
+
+
 * {
     margin: 0;
     padding: 0;
@@ -101,6 +103,32 @@ p {
 	cursor: pointer;
 }
 
+.primary-blue-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    background-color: #2563eb;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 2px solid #2563eb;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.primary-blue-button:hover {
+    background-color: #ffffff;
+    color: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(37, 99, 235, 0.25);
+}
+
+.primary-blue-button:active {
+    transform: translateY(0);
+}
 
 .header {
     position: fixed;
@@ -368,7 +396,7 @@ bootstrap.min.css
 #portfolio .section-heading {
 	padding-top: 200px;
 	padding-bottom: 200px;
-	background-color: #33c1cf;
+	background-color: #09385b;
 	height: 732px;
 	margin-left: -100vh;
 	padding-left: 100vh;
@@ -830,7 +858,7 @@ footer .connect-us ul li a:hover {
 		text-align: center;
 		padding-top: 100px;
 		padding-bottom: 100px;
-		background-color: #33c1cf;
+		background-color: #09385b;
 		height: 505px;
 		margin-left: -15px;
 		padding-left: 0vh;
