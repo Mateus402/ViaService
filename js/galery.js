@@ -1,32 +1,195 @@
-// 
 
-console.log("JavaScript da galeria carregado!");
+// const images = document.querySelectorAll(".card img");
 
-const images = document.querySelectorAll(".card img");
+// const lightbox = document.getElementById("lightbox");
+// const lightboxImage = document.getElementById("lightboxImage");
+// const closeLightbox = document.getElementById("closeLightbox");
+// const prevImage = document.getElementById("prevImage");
+// const nextImage = document.getElementById("nextImage");
+// const lightboxCounter = document.getElementById("lightboxCounter");
+
+
+// // VERIFICAÇÃO
+// console.log("Imagens:", images.length);
+// console.log("Lightbox:", lightbox);
+// console.log("Imagem do Lightbox:", lightboxImage);
+// console.log("Botão fechar:", closeLightbox);
+// console.log("Botão anterior:", prevImage);
+// console.log("Botão próximo:", nextImage);
+// console.log("Contador:", lightboxCounter);
+
+
+// // Índice da imagem atual
+// let currentIndex = 0;
+
+
+// // ABRIR LIGHTBOX
+// function openLightbox(index) {
+
+//     currentIndex = index;
+
+//     updateLightbox();
+
+//     lightbox.classList.add("active");
+
+//     document.body.style.overflow = "hidden";
+// }
+
+
+// // ATUALIZAR IMAGEM
+// function updateLightbox() {
+
+//     const image = images[currentIndex];
+
+//     lightboxImage.src = image.src;
+//     lightboxImage.alt = image.alt;
+
+//     lightboxCounter.textContent =
+//         `${currentIndex + 1} / ${images.length}`;
+// }
+
+
+// // PRÓXIMA IMAGEM
+// function showNext() {
+
+//     currentIndex++;
+
+//     if (currentIndex >= images.length) {
+//         currentIndex = 0;
+//     }
+
+//     updateLightbox();
+// }
+
+
+// // IMAGEM ANTERIOR
+// function showPrevious() {
+
+//     currentIndex--;
+
+//     if (currentIndex < 0) {
+//         currentIndex = images.length - 1;
+//     }
+
+//     updateLightbox();
+// }
+
+
+// // CLIQUE NAS IMAGENS
+// images.forEach((image, index) => {
+
+//     image.addEventListener("click", () => {
+
+//         openLightbox(index);
+
+//     });
+
+// });
+
+
+// // BOTÃO PRÓXIMO
+// nextImage.addEventListener("click", showNext);
+
+
+// // BOTÃO ANTERIOR
+// prevImage.addEventListener("click", showPrevious);
+
+
+// // BOTÃO FECHAR
+// closeLightbox.addEventListener("click", () => {
+
+//     lightbox.classList.remove("active");
+
+//     document.body.style.overflow = "";
+
+// });
+
+
+// // CLICAR FORA DA IMAGEM
+// lightbox.addEventListener("click", (event) => {
+
+//     if (event.target === lightbox) {
+
+//         lightbox.classList.remove("active");
+
+//         document.body.style.overflow = "";
+
+//     }
+
+// });
+
+
+// // TECLADO
+// document.addEventListener("keydown", (event) => {
+
+//     if (!lightbox.classList.contains("active")) {
+//         return;
+//     }
+
+
+//     // ESC
+//     if (event.key === "Escape") {
+
+//         lightbox.classList.remove("active");
+
+//         document.body.style.overflow = "";
+
+//     }
+
+
+//     // SETA DIREITA
+//     if (event.key === "ArrowRight") {
+
+//         showNext();
+
+//     }
+
+
+//     // SETA ESQUERDA
+//     if (event.key === "ArrowLeft") {
+
+//         showPrevious();
+
+//     }
+
+// });
+
+
+// console.log("JavaScript da galeria carregado!");
+
+
+// ===============================
+// ELEMENTOS
+// ===============================
+
+const galleryItems = document.querySelectorAll(".gallery-item");
 
 const lightbox = document.getElementById("lightbox");
-const lightboxImage = document.getElementById("lightboxImage");
+
+const lightboxMedia = document.getElementById("lightboxMedia");
+
 const closeLightbox = document.getElementById("closeLightbox");
+
 const prevImage = document.getElementById("prevImage");
+
 const nextImage = document.getElementById("nextImage");
+
 const lightboxCounter = document.getElementById("lightboxCounter");
 
-
-// VERIFICAÇÃO
-console.log("Imagens:", images.length);
-console.log("Lightbox:", lightbox);
-console.log("Imagem do Lightbox:", lightboxImage);
-console.log("Botão fechar:", closeLightbox);
-console.log("Botão anterior:", prevImage);
-console.log("Botão próximo:", nextImage);
-console.log("Contador:", lightboxCounter);
+const lightboxTitle = document.getElementById("lightboxTitle");
 
 
-// Índice da imagem atual
+// ===============================
+// VARIÁVEL
+// ===============================
+
 let currentIndex = 0;
 
 
+// ===============================
 // ABRIR LIGHTBOX
+// ===============================
+
 function openLightbox(index) {
 
     currentIndex = index;
@@ -39,25 +202,90 @@ function openLightbox(index) {
 }
 
 
-// ATUALIZAR IMAGEM
+// ===============================
+// ATUALIZAR LIGHTBOX
+// ===============================
+
 function updateLightbox() {
 
-    const image = images[currentIndex];
+    // Limpa o conteúdo anterior
+    lightboxMedia.innerHTML = "";
 
-    lightboxImage.src = image.src;
-    lightboxImage.alt = image.alt;
 
-    lightboxCounter.textContent =
-        `${currentIndex + 1} / ${images.length}`;
+    const item = galleryItems[currentIndex];
+
+
+    // ===========================
+    // VERIFICA SE É VÍDEO
+    // ===========================
+
+    if (item.dataset.type === "video") {
+
+    const video = document.createElement("video");
+
+    video.src = item.dataset.src;
+
+    video.controls = true;
+    video.autoplay = true;
+    video.playsInline = true;
+    video.muted = true;
+
+    video.classList.add("lightbox-video");
+
+    lightboxMedia.appendChild(video);
+
+    video.play().catch(error => {
+        console.log("O navegador bloqueou o autoplay:", error);
+    });
 }
 
 
-// PRÓXIMA IMAGEM
+    // ===========================
+    // SE FOR IMAGEM
+    // ===========================
+
+    else {
+
+        const image = document.createElement("img");
+
+        image.src = item.src;
+
+        image.alt = item.alt;
+
+        image.classList.add("lightbox-image");
+
+        lightboxMedia.appendChild(image);
+
+    }
+
+
+    // ===========================
+    // TÍTULO
+    // ===========================
+
+    lightboxTitle.textContent =
+        item.dataset.title || item.alt || "";
+
+
+    // ===========================
+    // CONTADOR
+    // ===========================
+
+    lightboxCounter.textContent =
+        `${currentIndex + 1} / ${galleryItems.length}`;
+}
+
+
+// ===============================
+// PRÓXIMO
+// ===============================
+
 function showNext() {
 
     currentIndex++;
 
-    if (currentIndex >= images.length) {
+    if (currentIndex >= galleryItems.length) {
+
         currentIndex = 0;
     }
 
@@ -65,23 +293,30 @@ function showNext() {
 }
 
 
-// IMAGEM ANTERIOR
+// ===============================
+// ANTERIOR
+// ===============================
+
 function showPrevious() {
 
     currentIndex--;
 
     if (currentIndex < 0) {
-        currentIndex = images.length - 1;
+
+        currentIndex = galleryItems.length - 1;
     }
 
     updateLightbox();
 }
 
 
-// CLIQUE NAS IMAGENS
-images.forEach((image, index) => {
+// ===============================
+// CLIQUE NOS ITENS
+// ===============================
 
-    image.addEventListener("click", () => {
+galleryItems.forEach((item, index) => {
+
+    item.addEventListener("click", () => {
 
         openLightbox(index);
 
@@ -90,42 +325,64 @@ images.forEach((image, index) => {
 });
 
 
+// ===============================
 // BOTÃO PRÓXIMO
+// ===============================
+
 nextImage.addEventListener("click", showNext);
 
 
+// ===============================
 // BOTÃO ANTERIOR
+// ===============================
+
 prevImage.addEventListener("click", showPrevious);
 
 
-// BOTÃO FECHAR
-closeLightbox.addEventListener("click", () => {
+// ===============================
+// FECHAR
+// ===============================
+
+function closeLightboxFunction() {
 
     lightbox.classList.remove("active");
 
     document.body.style.overflow = "";
 
-});
+    // Para o vídeo quando fechar
+    lightboxMedia.innerHTML = "";
+}
 
 
-// CLICAR FORA DA IMAGEM
+closeLightbox.addEventListener(
+    "click",
+    closeLightboxFunction
+);
+
+
+// ===============================
+// CLICAR FORA
+// ===============================
+
 lightbox.addEventListener("click", (event) => {
 
     if (event.target === lightbox) {
 
-        lightbox.classList.remove("active");
-
-        document.body.style.overflow = "";
+        closeLightboxFunction();
 
     }
 
 });
 
 
+// ===============================
 // TECLADO
+// ===============================
+
 document.addEventListener("keydown", (event) => {
 
     if (!lightbox.classList.contains("active")) {
+
         return;
     }
 
@@ -133,14 +390,12 @@ document.addEventListener("keydown", (event) => {
     // ESC
     if (event.key === "Escape") {
 
-        lightbox.classList.remove("active");
-
-        document.body.style.overflow = "";
+        closeLightboxFunction();
 
     }
 
 
-    // SETA DIREITA
+    // DIREITA
     if (event.key === "ArrowRight") {
 
         showNext();
@@ -148,7 +403,7 @@ document.addEventListener("keydown", (event) => {
     }
 
 
-    // SETA ESQUERDA
+    // ESQUERDA
     if (event.key === "ArrowLeft") {
 
         showPrevious();
