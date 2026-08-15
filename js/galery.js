@@ -162,33 +162,298 @@
 // ELEMENTOS
 // ===============================
 
+
+
+
+// ---********************************************************
+
+// const galleryItems = document.querySelectorAll(".gallery-item");
+
+// const lightbox = document.getElementById("lightbox");
+
+// const lightboxMedia = document.getElementById("lightboxMedia");
+
+// const closeLightbox = document.getElementById("closeLightbox");
+
+// const prevImage = document.getElementById("prevImage");
+
+// const nextImage = document.getElementById("nextImage");
+
+// const lightboxCounter = document.getElementById("lightboxCounter");
+
+// const lightboxTitle = document.getElementById("lightboxTitle");
+
+
+// // ===============================
+// // VARIÁVEL
+// // ===============================
+
+// let currentIndex = 0;
+
+
+// // ===============================
+// // ABRIR LIGHTBOX
+// // ===============================
+
+// function openLightbox(index) {
+
+//     currentIndex = index;
+
+//     updateLightbox();
+
+//     lightbox.classList.add("active");
+
+//     document.body.style.overflow = "hidden";
+// }
+
+
+// // ===============================
+// // ATUALIZAR LIGHTBOX
+// // ===============================
+
+// function updateLightbox() {
+
+//     // Limpa o conteúdo anterior
+//     lightboxMedia.innerHTML = "";
+
+
+//     const item = galleryItems[currentIndex];
+
+
+//     // ===========================
+//     // VERIFICA SE É VÍDEO
+//     // ===========================
+
+//     if (item.dataset.type === "video") {
+
+//     const video = document.createElement("video");
+
+//     video.src = item.dataset.src;
+
+//     video.controls = true;
+//     video.autoplay = true;
+//     video.playsInline = true;
+//     video.muted = true;
+
+//     video.classList.add("lightbox-video");
+
+//     lightboxMedia.appendChild(video);
+
+//     video.play().catch(error => {
+//         console.log("O navegador bloqueou o autoplay:", error);
+//     });
+// }
+
+
+//     // ===========================
+//     // SE FOR IMAGEM
+//     // ===========================
+
+//     else {
+
+//         const image = document.createElement("img");
+
+//         image.src = item.src;
+
+//         image.alt = item.alt;
+
+//         image.classList.add("lightbox-image");
+
+//         lightboxMedia.appendChild(image);
+
+//     }
+
+
+//     // ===========================
+//     // TÍTULO
+//     // ===========================
+
+//     lightboxTitle.textContent =
+//         item.dataset.title || item.alt || "";
+
+
+//     // ===========================
+//     // CONTADOR
+//     // ===========================
+
+//     lightboxCounter.textContent =
+//         `${currentIndex + 1} / ${galleryItems.length}`;
+// }
+
+
+// // ===============================
+// // PRÓXIMO
+// // ===============================
+
+// function showNext() {
+
+//     currentIndex++;
+
+//     if (currentIndex >= galleryItems.length) {
+
+//         currentIndex = 0;
+//     }
+
+//     updateLightbox();
+// }
+
+
+// // ===============================
+// // ANTERIOR
+// // ===============================
+
+// function showPrevious() {
+
+//     currentIndex--;
+
+//     if (currentIndex < 0) {
+
+//         currentIndex = galleryItems.length - 1;
+//     }
+
+//     updateLightbox();
+// }
+
+
+// // ===============================
+// // CLIQUE NOS ITENS
+// // ===============================
+
+// galleryItems.forEach((item, index) => {
+
+//     item.addEventListener("click", () => {
+
+//         openLightbox(index);
+
+//     });
+
+// });
+
+
+// // ===============================
+// // BOTÃO PRÓXIMO
+// // ===============================
+
+// nextImage.addEventListener("click", showNext);
+
+
+// // ===============================
+// // BOTÃO ANTERIOR
+// // ===============================
+
+// prevImage.addEventListener("click", showPrevious);
+
+
+// // ===============================
+// // FECHAR
+// // ===============================
+
+// function closeLightboxFunction() {
+
+//     lightbox.classList.remove("active");
+
+//     document.body.style.overflow = "";
+
+//     // Para o vídeo quando fechar
+//     lightboxMedia.innerHTML = "";
+// }
+
+
+// closeLightbox.addEventListener(
+//     "click",
+//     closeLightboxFunction
+// );
+
+
+// // ===============================
+// // CLICAR FORA
+// // ===============================
+
+// lightbox.addEventListener("click", (event) => {
+
+//     if (event.target === lightbox) {
+
+//         closeLightboxFunction();
+
+//     }
+
+// });
+
+
+// // ===============================
+// // TECLADO
+// // ===============================
+
+// document.addEventListener("keydown", (event) => {
+
+//     if (!lightbox.classList.contains("active")) {
+
+//         return;
+//     }
+
+
+//     // ESC
+//     if (event.key === "Escape") {
+
+//         closeLightboxFunction();
+
+//     }
+
+
+//     // DIREITA
+//     if (event.key === "ArrowRight") {
+
+//         showNext();
+
+//     }
+
+
+//     // ESQUERDA
+//     if (event.key === "ArrowLeft") {
+
+//         showPrevious();
+
+//     }
+
+// });
+
+
+
+
+
+
+
+
+// -************************
+console.log("JavaScript da galeria carregado!");
+
+
+// ========================================
+// ELEMENTOS
+// ========================================
+
 const galleryItems = document.querySelectorAll(".gallery-item");
 
 const lightbox = document.getElementById("lightbox");
 
 const lightboxMedia = document.getElementById("lightboxMedia");
 
-const closeLightbox = document.getElementById("closeLightbox");
+const closeButton = document.getElementById("closeLightbox");
 
-const prevImage = document.getElementById("prevImage");
+const prevButton = document.getElementById("prevImage");
 
-const nextImage = document.getElementById("nextImage");
+const nextButton = document.getElementById("nextImage");
 
 const lightboxCounter = document.getElementById("lightboxCounter");
 
 const lightboxTitle = document.getElementById("lightboxTitle");
 
-
-// ===============================
-// VARIÁVEL
-// ===============================
-
 let currentIndex = 0;
 
 
-// ===============================
+// ========================================
 // ABRIR LIGHTBOX
-// ===============================
+// ========================================
 
 function openLightbox(index) {
 
@@ -202,83 +467,51 @@ function openLightbox(index) {
 }
 
 
-// ===============================
-// ATUALIZAR LIGHTBOX
-// ===============================
+// ========================================
+// ATUALIZAR IMAGEM
+// ========================================
 
 function updateLightbox() {
+
+    const item = galleryItems[currentIndex];
+
+    if (!item) {
+        return;
+    }
+
 
     // Limpa o conteúdo anterior
     lightboxMedia.innerHTML = "";
 
 
-    const item = galleryItems[currentIndex];
+    // Cria imagem
+    const image = document.createElement("img");
+
+    image.src = item.src;
+
+    image.alt = item.alt || "";
+
+    image.classList.add("lightbox-image");
 
 
-    // ===========================
-    // VERIFICA SE É VÍDEO
-    // ===========================
-
-    if (item.dataset.type === "video") {
-
-    const video = document.createElement("video");
-
-    video.src = item.dataset.src;
-
-    video.controls = true;
-    video.autoplay = true;
-    video.playsInline = true;
-    video.muted = true;
-
-    video.classList.add("lightbox-video");
-
-    lightboxMedia.appendChild(video);
-
-    video.play().catch(error => {
-        console.log("O navegador bloqueou o autoplay:", error);
-    });
-}
+    // Adiciona ao Lightbox
+    lightboxMedia.appendChild(image);
 
 
-    // ===========================
-    // SE FOR IMAGEM
-    // ===========================
-
-    else {
-
-        const image = document.createElement("img");
-
-        image.src = item.src;
-
-        image.alt = item.alt;
-
-        image.classList.add("lightbox-image");
-
-        lightboxMedia.appendChild(image);
-
-    }
-
-
-    // ===========================
-    // TÍTULO
-    // ===========================
-
+    // Título
     lightboxTitle.textContent =
         item.dataset.title || item.alt || "";
 
 
-    // ===========================
-    // CONTADOR
-    // ===========================
-
+    // Contador
     lightboxCounter.textContent =
         `${currentIndex + 1} / ${galleryItems.length}`;
 }
 
 
-// ===============================
-// PRÓXIMO
-// ===============================
+// ========================================
+// PRÓXIMA IMAGEM
+// ========================================
 
 function showNext() {
 
@@ -287,15 +520,16 @@ function showNext() {
     if (currentIndex >= galleryItems.length) {
 
         currentIndex = 0;
+
     }
 
     updateLightbox();
 }
 
 
-// ===============================
-// ANTERIOR
-// ===============================
+// ========================================
+// IMAGEM ANTERIOR
+// ========================================
 
 function showPrevious() {
 
@@ -304,15 +538,16 @@ function showPrevious() {
     if (currentIndex < 0) {
 
         currentIndex = galleryItems.length - 1;
+
     }
 
     updateLightbox();
 }
 
 
-// ===============================
-// CLIQUE NOS ITENS
-// ===============================
+// ========================================
+// CLIQUE NAS IMAGENS
+// ========================================
 
 galleryItems.forEach((item, index) => {
 
@@ -325,77 +560,92 @@ galleryItems.forEach((item, index) => {
 });
 
 
-// ===============================
+// ========================================
 // BOTÃO PRÓXIMO
-// ===============================
+// ========================================
 
-nextImage.addEventListener("click", showNext);
+nextButton.addEventListener("click", (event) => {
+
+    event.stopPropagation();
+
+    showNext();
+
+});
 
 
-// ===============================
+// ========================================
 // BOTÃO ANTERIOR
-// ===============================
+// ========================================
 
-prevImage.addEventListener("click", showPrevious);
+prevButton.addEventListener("click", (event) => {
+
+    event.stopPropagation();
+
+    showPrevious();
+
+});
 
 
-// ===============================
-// FECHAR
-// ===============================
+// ========================================
+// FECHAR LIGHTBOX
+// ========================================
 
-function closeLightboxFunction() {
+function closeLightbox() {
 
     lightbox.classList.remove("active");
 
     document.body.style.overflow = "";
 
-    // Para o vídeo quando fechar
     lightboxMedia.innerHTML = "";
 }
 
 
-closeLightbox.addEventListener(
-    "click",
-    closeLightboxFunction
-);
+closeButton.addEventListener("click", (event) => {
+
+    event.stopPropagation();
+
+    closeLightbox();
+
+});
 
 
-// ===============================
-// CLICAR FORA
-// ===============================
+// ========================================
+// CLICAR FORA DA IMAGEM
+// ========================================
 
 lightbox.addEventListener("click", (event) => {
 
     if (event.target === lightbox) {
 
-        closeLightboxFunction();
+        closeLightbox();
 
     }
 
 });
 
 
-// ===============================
+// ========================================
 // TECLADO
-// ===============================
+// ========================================
 
 document.addEventListener("keydown", (event) => {
 
     if (!lightbox.classList.contains("active")) {
 
         return;
+
     }
 
 
     // ESC
     if (event.key === "Escape") {
 
-        closeLightboxFunction();
+        closeLightbox();
 
     }
 
 
-    // DIREITA
+    // SETA DIREITA
     if (event.key === "ArrowRight") {
 
         showNext();
@@ -403,7 +653,7 @@ document.addEventListener("keydown", (event) => {
     }
 
 
-    // ESQUERDA
+    // SETA ESQUERDA
     if (event.key === "ArrowLeft") {
 
         showPrevious();
