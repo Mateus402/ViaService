@@ -4922,7 +4922,8 @@ select[multiple].input-group-sm>.input-group-btn>.btn {
     height: 50px;
     padding: 15px 15px;
     font-size: 18px;
-    line-height: 20px
+    line-height: 20px;
+    margin-top: 10px;
 }
 
 .navbar-brand:hover,
@@ -4983,7 +4984,7 @@ select[multiple].input-group-sm>.input-group-btn>.btn {
 .navbar-nav>li>a {
     padding-top: 10px;
     padding-bottom: 10px;
-    line-height: 20px
+    line-height: 20px;
 }
 
 @media (max-width:767px) {
