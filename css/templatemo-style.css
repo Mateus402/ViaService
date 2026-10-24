@@ -301,6 +301,13 @@ h3 {
 }
 
 /* Logo e conteúdo principal da página inicial */
+.logo {
+	background-color: #ffffffc7;
+	border-radius: 25px;
+	padding-bottom: 15px;
+	
+}
+
 .logo .container {
     display: flex;
     flex-direction: column;
@@ -312,7 +319,7 @@ h3 {
 .logo img {
     display: block;
     width: 100%;
-    max-width: 400px;
+    max-width: 700px;
     height: auto;
     margin: 0 auto;
     object-fit: contain;
@@ -320,8 +327,15 @@ h3 {
 
 /* Ajustes para dispositivos móveis */
 @media (max-width: 768px) {
-    .logo img {
-        max-width: 280px;
+    .logo {
+		background-color: #ffffffc7;
+		border-radius: 25px;
+		padding-bottom: 15px;
+	}
+
+	.logo img {
+        max-width: 500px;
+		
     }
 
     .logo h1 {
@@ -337,8 +351,15 @@ h3 {
 }
 
 @media (max-width: 480px) {
+	.logo {
+		background-color: #ffffffc7;
+		border-radius: 25px;
+		padding-bottom: 15px;
+	}
+
     .logo img {
-        max-width: 230px;
+        max-width: 500px;
+		border-radius: 25px;
     }
 
     .logo h1 {
@@ -347,6 +368,7 @@ h3 {
 
     .logo p {
         font-size: 14px;
+		
     }
 }
 
@@ -407,6 +429,24 @@ h3 {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
+}
+
+#about .section-heading {
+	background-color: rgba(0, 0, 0, 0.296);
+	border-radius: 20px;
+	padding: 15px 15px;
+	margin-bottom: 30px;
+	
+}
+
+#about .section-heading h4{
+	font-size: 30px;
+	color: #fff;
+}
+
+#about .section-heading p{
+	font-size: 16px;
+	color: #fff;
 }
 
 #about .service-item {
@@ -1185,6 +1225,7 @@ footer .connect-us ul li a:hover {
 	#about .service-item {
 		margin-bottom: 80px;
 	} 
+
 
 
 	#portfolio .section-heading {		
