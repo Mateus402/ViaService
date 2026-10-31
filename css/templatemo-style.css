@@ -432,7 +432,7 @@ h3 {
 }
 
 #about .section-heading {
-	background-color: rgba(0, 0, 0, 0.296);
+	background-color: rgba(0, 0, 0, 0.656);
 	border-radius: 20px;
 	padding: 15px 15px;
 	margin-bottom: 30px;
@@ -451,7 +451,7 @@ h3 {
 
 #about .service-item {
 	text-align: center;
-	background-color: rgba(0, 0, 0, 0.296);
+	background-color: rgba(0, 0, 0, 0.656);
 	border-radius: 20px;
 	padding: 30px 15px;
 }
@@ -538,7 +538,7 @@ h3 {
 #portfolio .section-heading {
 	padding-top: 50px;
 	padding-bottom: 50px;
-	background-color: #09385b;
+	background-color: rgba(0, 0, 0, 0.656);
 	text-align: center;
 	
 }
@@ -826,6 +826,11 @@ h3 {
 }
 .tabgroup .text-content p {
 	margin-top: 10px;
+	font-size: 14px;
+	color: #121212;
+}
+.tabgroup .text-content img {
+	height: 70px;
 }
 
 .clearfix:after {
@@ -1091,6 +1096,172 @@ footer .connect-us ul li a:hover {
     position: relative;
 }
 
+
+/* CARROSSEL */
+
+
+.services-track {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Cartões com altura uniforme */
+.service-slide {
+    flex: 0 0 calc(25% - 15px);
+    display: flex;
+    min-width: 0;
+    scroll-snap-align: start;
+}
+
+.service-slide .service-item {
+    width: 100%;
+    height: auto;
+    min-height: 500px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 30px 15px;
+    border-radius: 20px;
+
+    background: rgba(0, 0, 0, 0.65);
+    text-align: center;
+}
+
+/* Não limitar o conteúdo dos textos */
+.service-slide p {
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    overflow: visible;
+}
+
+/* Tablets */
+@media (max-width: 991px) {
+    .service-slide {
+        flex: 0 0 calc(50% - 10px);
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    .service-slide {
+        flex: 0 0 100%;
+    }
+
+    .service-slide .service-item {
+        min-height: 0;
+        padding: 25px 20px;
+    }
+}
+/* Botão Veja Fotos */
+.services-carousel .service-item .btn-fotos {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 9px 20px;
+    margin: 10px 0 5px;
+
+    background: #2563eb;
+    color: #fff !important;
+
+    border: 1px solid #2563eb;
+    border-radius: 6px;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-decoration: none !important;
+    text-transform: uppercase;
+
+    transition: all 0.25s ease;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* Efeito ao passar o mouse */
+.services-carousel .service-item .btn-fotos:hover {
+    background: #1749b5;
+    border-color: #1749b5;
+    color: #fff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Efeito ao clicar */
+.services-carousel .service-item .btn-fotos:active {
+    transform: scale(0.97);
+}
+
+/* Ajuste para celulares */
+@media (max-width: 600px) {
+    .services-carousel .service-item .btn-fotos {
+        padding: 10px 22px;
+        font-size: 12px;
+    }
+}
+
+.services-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.services-carousel .carousel-arrow {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+
+    width: 45px !important;
+    height: 45px !important;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #09385b !important;
+    color: #ffffff !important;
+
+    border: 2px solid #ffffff !important;
+    border-radius: 50% !important;
+
+    font-size: 24px !important;
+    cursor: pointer;
+    z-index: 999 !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.services-carousel .carousel-arrow.prev {
+    left: 5px !important;
+}
+
+.services-carousel .carousel-arrow.next {
+    right: 5px !important;
+}
+
+.services-carousel .carousel-arrow:hover {
+    background-color: #2563eb !important;
+}
+
+@media (max-width: 600px) {
+    .services-carousel .carousel-arrow {
+        width: 35px !important;
+        height: 35px !important;
+        font-size: 18px !important;
+    }
+}
 
 /* ========================================
    TRACK
