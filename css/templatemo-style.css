@@ -328,7 +328,7 @@ h3 {
 /* Ajustes para dispositivos móveis */
 @media (max-width: 768px) {
     .logo {
-		background-color: #ffffffc7;
+		background-color: #ffffffe4;
 		border-radius: 25px;
 		padding-bottom: 15px;
 	}
@@ -352,7 +352,7 @@ h3 {
 
 @media (max-width: 480px) {
 	.logo {
-		background-color: #ffffffc7;
+		background-color: #ffffffe4;
 		border-radius: 25px;
 		padding-bottom: 15px;
 	}
