@@ -232,11 +232,11 @@ p {
 }
 .navbar-inverse .navbar-toggle {
 	margin-top: 22px;
-    border-color: #f7c552;
-    background-color: #f7c552;
+    border-color: #09385b;
+    background-color: #09385b;
 }
 .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
-	background-color: #f7c552;
+	background-color: #09385b;
 }
 bootstrap.min.css
 .navbar-toggle {
@@ -961,7 +961,7 @@ h3 {
 
 footer {
 	margin-top: -6px;
-	background-color: #d4d4d4;
+	background-color: #efefef;
 	padding: 50px 0px;
 }
 footer .logo em {
@@ -1172,10 +1172,10 @@ footer .connect-us ul li a:hover {
     padding: 9px 20px;
     margin: 10px 0 5px;
 
-    background: #2563eb;
+    background: #b0b2b7;
     color: #fff !important;
 
-    border: 1px solid #2563eb;
+    border: 1px solid #b0b2b7;
     border-radius: 6px;
 
     font-size: 12px;
