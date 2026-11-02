@@ -1,19 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
-
     const track = document.getElementById("servicesTrack");
-    const next = document.querySelector(".services-carousel .next");
-    const prev = document.querySelector(".services-carousel .prev");
+    const next = document.querySelector(".carousel-arrow.next");
+    const prev = document.querySelector(".carousel-arrow.prev");
 
-    if (!track || !next || !prev) {
-        console.error("Elementos do carrossel não encontrados.");
-        return;
-    }
+    if (!track || !next || !prev) return;
 
     function getScrollAmount() {
         const card = track.querySelector(".service-slide");
-        const gap = parseFloat(getComputedStyle(track).gap) || 0;
+        const gap = parseInt(getComputedStyle(track).gap) || 0;
 
-        return card.getBoundingClientRect().width + gap;
+        return card.offsetWidth + gap;
     }
 
     next.addEventListener("click", function () {
@@ -29,5 +25,4 @@ document.addEventListener("DOMContentLoaded", function () {
             behavior: "smooth"
         });
     });
-
 });
