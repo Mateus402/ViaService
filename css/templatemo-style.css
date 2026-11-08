@@ -16,7 +16,7 @@ https://templatemo.com/tm-506-tinker
   display: flex;
   align-items: center;
   background: #25d366;
-  padding: 10px 15px;
+  padding: 6px 8px;
   border-radius: 50px;
   color: #fff;
   font-family: Arial, sans-serif;
@@ -172,7 +172,7 @@ p {
 .navbar-nav>li>a {
 	color: #000000!important;
 	font-size: 13px;
-	font-weight: 300;
+	font-weight: 800;
 	text-transform: uppercase;
 	text-shadow: none;
 	line-height: 80px;
