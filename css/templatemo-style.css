@@ -1055,6 +1055,10 @@ footer .contact-info ul li em {
 	font-weight: 500;
 }
 
+footer .contact-info ul li a {
+	color: #000000;
+}
+
 footer .connect-us h4 {
 	margin-top: 0px;
 	font-size: 13px;
